@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Effets globaux */
+html, body, #root { height: 100%; }
+
+/* Grille et décor rappel Star Citizen */
+.bg-star-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(175,198,212,0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.card-glass {
+  /* utilitaires combinés; Tailwind générera ces classes */
+  /* Remarque: la classe custom backdrop-blur-xs est remplacée par backdrop-blur-sm */
+  @apply bg-scMetal/40 backdrop-blur-sm border border-scLight/20 rounded-xl shadow-glow;
+}
+
+.link-underline {
+  @apply underline underline-offset-4 decoration-scBlue/60 hover:decoration-scBlue transition;
+}
+
+/* Transitions de page */
+.page-enter { opacity: 0; transform: translateY(8px); }
+.page-enter-active { opacity: 1; transform: translateY(0); transition: all 350ms ease; }
+.page-exit { opacity: 1; }
+.page-exit-active { opacity: 0; transform: translateY(-6px); transition: all 250ms ease; }
